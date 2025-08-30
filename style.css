@@ -1,0 +1,362 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 3px solid oklch(62.3% 0.214 259.815) !important;
+  z-index: 1;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #333;
+
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right bottom, #012647e2, #04184fd8),
+    url("./back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 96rem;
+  height: 89rem;
+
+  padding: 3rem;
+}
+
+.home {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  border: 2px solid;
+}
+
+.home-container header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 3rem;
+}
+
+.home-container h2 {
+  font-size: 3.6rem;
+  line-height: 1.7;
+  color: #dbdcff;
+}
+
+.home .book-icon {
+  font-size: 5.6rem;
+  color: oklch(70.4% 0.14 182.503);
+}
+
+.home-container .main .form {
+  background: oklch(98.4% 0.019 200.873);
+
+  display: flex;
+  flex-flow: column;
+  gap: 3rem;
+}
+
+.form-options {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.form-options a:link,
+.form-options a:visited {
+  display: block;
+  color: #fff;
+  padding: 2rem;
+  flex: 1;
+
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form-options a:hover,
+.form-options a:active {
+  background-color: oklch(43.7% 0.078 188.216);
+  color: #fff;
+}
+
+.form-options > *:first-child {
+  background-color: oklch(52% 0.105 223.128);
+  color: #fff;
+}
+
+.form-options > *:nth-child(2) {
+  background-color: oklch(70.4% 0.14 182.503);
+  color: #fff;
+}
+
+.form-options > *:last-child {
+  background-color: oklch(52% 0.105 223.128);
+  color: #fff;
+}
+
+main .form-input {
+  display: flex;
+  flex-flow: column;
+  gap: 1.7rem;
+
+  padding: 0 4rem;
+}
+
+.main .form-input > input {
+  padding: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.form .auth-button {
+  align-self: center;
+  width: 20rem;
+  height: 5rem;
+
+  cursor: pointer;
+
+  border-radius: 0%;
+  border: none;
+
+  background-color: oklch(70.4% 0.14 182.503);
+  color: #fff;
+
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+
+  transition: all 0.3s;
+}
+
+.form .auth-button:hover {
+  background-color: oklch(80.593% 0.13815 183.699);
+}
+
+.main .form a.active-tab {
+  background-color: transparent;
+  color: oklch(52% 0.105 223.128);
+}
+
+.message-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  flex: 100%;
+  top: 0;
+
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: green; */
+
+  max-height: 20rem;
+  overflow: scroll;
+}
+
+.info-box {
+  color: #eee;
+  font-weight: lighter;
+
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  animation: comeDown 0.4s 0;
+  transition: all 0.5s;
+}
+
+@keyframes comeDown {
+  0% {
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.error-box {
+  background-color: oklch(63.78% 0.23729 25.422 / 0.439);
+}
+
+.success-box {
+  background-color: oklch(62.705% 0.13675 161.872);
+}
+
+.close-info {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user-dashboard {
+  background-color:oklch(98.4% 0.019 200.873);
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.nav-dashboard {
+  background-color: oklch(52% 0.105 223.128);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+}
+
+.nav-dashboard li a{
+  list-style: none;
+
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.nav-dashboard li a:hover::after {
+  animation: leftToRight 0.3s ease-in;
+  width: 100%;
+}
+
+.nav-dashboard li a::after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: green;
+  color: #fff;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+
+.nav-dashboard li.active-tab a{
+  background-color: oklch(98.4% 0.019 200.873);
+  color: oklch(52% 0.105 223.128);;
+}
+
+.nav-dashboard li.active-tab a:hover{
+  color: oklch(98.4% 0.019 200.873);
+}
+
+@keyframes leftToRight {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.nav-dashboard li:not(:last-child) {
+  border-bottom: 1px solid;
+}
+
+.nav-dashboard li:last-child {
+  margin-top: auto;
+}
+
+.main-book {
+  padding: 2rem 2rem;
+}
+
+.book-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul.books {
+  margin-top: 4rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr ;
+  row-gap: 3rem;
+}
+
+ul.books .book {
+  /* height: 25rem; */
+  
+  width: 80%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0rem 0.7rem 0rem teal;
+  transition: all 0.3s;
+  padding-bottom: 1rem;
+}
+
+ul.books .book:hover {
+  transform: translateY(-1rem);
+}
+
+.book img {
+  height: 10rem;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  font-family: monospace;
+}
+
+.description > p {
+  flex: 1;
+  flex-basis: 100%;
+  
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+.description ion-icon {
+  font-size: 1.7rem;
+  color: teal;
+}
+
+.description > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
